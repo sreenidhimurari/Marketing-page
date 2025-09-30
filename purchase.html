@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartPhone X - Purchase</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <h1>SmartPhone X</h1>
+        </nav>
+    </header>
+
+  <div class="container">
+    <h2>Complete Your Purchase</h2>
+    <div class="price-tag">Amount: ₹29,999</div>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Your name">
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" placeholder="Your phone number">
+
+    <label for="address">Address:</label>
+    <textarea id="address" rows="4" placeholder="Your delivery address"></textarea>
+
+    <label for="payment">Payment Method:</label>
+    <select id="payment" onchange="showPaymentFields()">
+      <option value="">--Select--</option>
+      <option value="credit">Credit Card</option>
+      <option value="debit">Debit Card</option>
+      <option value="upi">UPI</option>
+      <option value="cod">Cash on Delivery</option>
+    </select>
+
+    <div id="payment-fields"></div>
+
+    <button onclick="placeOrder()">Submit</button>
+
+    <div class="success" id="successMsg"></div>
+  </div>
+
+  <script>
+    function showPaymentFields() {
+      const method = document.getElementById("payment").value;
+      const container = document.getElementById("payment-fields");
+      container.innerHTML = "";
+
+      if (method === "credit" || method === "debit") {
+        container.innerHTML = `
+          <label>Card Number:</label>
+          <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX">
+          <label>CVV:</label>
+          <input type="text" placeholder="CVV">
+          <label>Expiry Date:</label>
+          <input type="text" placeholder="MM/YY">
+          <button type="button" onclick="payNow()">Pay</button>
+        `;
+      } else if (method === "upi") {
+        container.innerHTML = `
+          <label>UPI ID:</label>
+          <input type="text" placeholder="yourupi@bank">
+          <label>Transaction ID:</label>
+          <input type="text" placeholder="Transaction ID">
+          <button type="button" onclick="payNow()">Pay</button>
+        `;
+      } else if (method === "cod") {
+        container.innerHTML = `
+          <div class="note">You chose Cash on Delivery. No online payment required.</div>
+        `;
+      }
+    }
+
+    function payNow() {
+      alert("Payment successful!");
+    }
+
+    function placeOrder() {
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const payment = document.getElementById("payment").value;
+
+      if (name === "" || phone === "" || address === "" || payment === "") {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      document.getElementById("successMsg").textContent = "Order Placed Successfully!";
+    }
+  </script>
+
+</body>
+</html>

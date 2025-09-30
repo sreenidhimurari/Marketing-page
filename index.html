@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphone Product Landing Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <h1>SmartPhone X</h1>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#specs">Specifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 hero-content">
+                    <h2>Experience the Future</h2>
+                    <p>The new SmartPhone X is here to redefine what a smartphone can do. Discover unparalleled performance, stunning design, and advanced features that keep you connected like never before.</p>
+                    <a href="purchase.html" class="cta-button">Buy Now</a>
+
+                </div>
+                <div class="col-6 hero-image">
+                    <img src="phone.jpg" alt="Smart Phone">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="row">
+                <div class="col-4 feature-item">
+                    <h3>High-Resolution Display</h3>
+                    <p>Enjoy vibrant colors and sharp details with a stunning 6.5-inch OLED display.</p>
+                </div>
+                <div class="col-4 feature-item">
+                    <h3>Advanced Camera</h3>
+                    <p>Capture every moment with a 108MP triple camera system.</p>
+                </div>
+                <div class="col-4 feature-item">
+                    <h3>Fast Performance</h3>
+                    <p>Experience lightning-fast speeds with the latest Snapdragon processor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specs" class="specs">
+        <div class="container">
+            <h2>Specifications</h2>
+            <div class="row">
+                <div class="col-6 spec-item">
+                    <h3>Display</h3>
+                    <p>6.5-inch OLED, 2400 x 1080 pixels</p>
+                </div>
+                <div class="col-6 spec-item">
+                    <h3>Processor</h3>
+                    <p>Snapdragon 888</p>
+                </div>
+                <div class="col-6 spec-item">
+                    <h3>Camera</h3>
+                    <p>108MP + 12MP + 8MP rear, 32MP front</p>
+                </div>
+                <div class="col-6 spec-item">
+                    <h3>Battery</h3>
+                    <p>4500mAh, Fast Charging</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="row">
+                <div class="col-6 review-item">
+                    <p>"The SmartPhone X is amazing! The camera quality is outstanding and the performance is top-notch." - Alice</p>
+                </div>
+                <div class="col-6 review-item">
+                    <p>"I love the design and the display is so clear and bright. Definitely the best phone I've ever owned." - Bob</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact us</h2>
+            <div class="row">
+                <div class="col-6 contact-item">
+                    <form action="">
+                        <input type="text" name="name" placeholder="Full Name"><br>
+                        <input type="email" name="email" placeholder="E-mail address"><br>
+                        <input type="number" name="number" placeholder="Contact Number"><br>
+                        <textarea name="Message" placeholder="Message"></textarea><br>
+                        <button type="button" class="submit" onclick="showMessage()">Submit</button>
+                        <p id="message"></p>
+                        <script>
+                        function showMessage() {
+                            document.getElementById("message").textContent = "Submitted Successfully!";
+                            }
+                        </script>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SmartPhone X. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
